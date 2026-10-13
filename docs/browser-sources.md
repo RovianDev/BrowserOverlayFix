@@ -3,7 +3,6 @@
 Checked October 13, 2026. These establish package identity, not module compatibility.
 
 - [Opera](https://play.google.com/store/apps/details?id=com.opera.browser)
-- [Opera beta](https://play.google.com/store/apps/details?id=com.opera.browser.beta)
 - [Chrome](https://play.google.com/store/apps/details?id=com.android.chrome)
 - [Brave](https://play.google.com/store/apps/details?id=com.brave.browser)
 - [Edge](https://play.google.com/store/apps/details?id=com.microsoft.emmx)
