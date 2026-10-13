@@ -1,1 +1,1 @@
-By RovianDev. Fixes overlay-blocked browser dialogs. Confirmed on the author's phone in Opera, Chrome, Brave, Edge, Firefox, Vivaldi and DuckDuckGo. Samsung Browser expected to work, untested. LSPosed API 102; reduces tapjacking protection in selected browsers.
+By RovianDev. Fixes overlay-blocked browser dialogs. Tested and working with Panels in Opera, Chrome, Brave, Edge, Firefox, Vivaldi and DuckDuckGo. Samsung Browser expected to work, untested. LSPosed API 102; reduces tapjacking protection in selected browsers.
