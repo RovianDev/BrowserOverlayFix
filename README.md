@@ -10,7 +10,7 @@ Makes browser permission dialogs respond when a floating overlay such as Panels 
 
 Inside browsers you select in LSPosed, the module changes Java touch-event reporting so a touch is reported as unobscured. It clears only the obscured and partially obscured flags in `MotionEvent.getFlags()` and returns false from `isObscured()` and, where available, `isPartiallyObscured()`.
 
-The fix began with Opera's website location dialog. The Opera-only predecessor v1.0.1 was confirmed working with Panels by the author on October 13, 2026. This expanded release preserves that hook behavior and adds a browser allowlist, icon and informational app screen.
+RovianDev confirmed Browser Overlay Fix v1.0.0 working with Panels on their phone on October 13, 2026, in Opera, Chrome, Brave, Microsoft Edge, Firefox, Vivaldi and DuckDuckGo. The module includes a browser allowlist, icon and informational app screen.
 
 It does not grant permissions, click buttons, change website permissions, hide installed apps, or modify Panels. It does not hook system_server or Android's permission controller. It has no network permission, analytics, or background service.
 
@@ -24,17 +24,16 @@ Enable the module only for browsers where you need it, and use trusted overlays.
 
 | Browser | Package | Status |
 | --- | --- | --- |
-| Opera | `com.opera.browser` | Underlying fix confirmed with Panels in predecessor v1.0.1; this release needs retest |
-| Opera beta | `com.opera.browser.beta` | Scoped; not device-tested |
-| Chrome | `com.android.chrome` | Scoped; not device-tested |
-| Brave | `com.brave.browser` | Scoped; not device-tested |
-| Microsoft Edge | `com.microsoft.emmx` | Scoped; not device-tested |
-| Samsung Browser | `com.sec.android.app.sbrowser` | Scoped; not device-tested |
-| Firefox | `org.mozilla.firefox` | Scoped; not device-tested |
-| Vivaldi | `com.vivaldi.browser` | Scoped; not device-tested |
-| DuckDuckGo | `com.duckduckgo.mobile.android` | Scoped; not device-tested |
+| Opera | `com.opera.browser` | Confirmed working on the author's phone (v1.0.0) |
+| Chrome | `com.android.chrome` | Confirmed working on the author's phone (v1.0.0) |
+| Brave | `com.brave.browser` | Confirmed working on the author's phone (v1.0.0) |
+| Microsoft Edge | `com.microsoft.emmx` | Confirmed working on the author's phone (v1.0.0) |
+| Samsung Browser | `com.sec.android.app.sbrowser` | Expected to work; not yet tested |
+| Firefox | `org.mozilla.firefox` | Confirmed working on the author's phone (v1.0.0) |
+| Vivaldi | `com.vivaldi.browser` | Confirmed working on the author's phone (v1.0.0) |
+| DuckDuckGo | `com.duckduckgo.mobile.android` | Confirmed working on the author's phone (v1.0.0) |
 
-These are intended targets, not a claim that every browser works. Native checks, compiled/inlined callers, browser changes, accessibility overlays, or Android input blocking can limit effectiveness. Android runtime permission dialogs may still refuse obscured touches. No universal browser compatibility is promised. Unlisted browser variants are excluded by the module's internal allowlist even if manually selected in LSPosed.
+The seven confirmed browsers were tested by the author on their own phone. Samsung Browser is expected to work because it uses the same Android touch-event APIs, but it has not been tested. Results can vary with the device, browser version, overlay or Android input blocking. Android runtime permission dialogs may still refuse obscured touches. Select only the browsers you need in LSPosed.
 
 Package identities were checked against the [official Play listings](docs/browser-sources.md). Browser names belong to their respective owners; this project is not affiliated with them.
 
@@ -84,7 +83,7 @@ If the module is listed but not working, restart the browser and inspect its log
 
 ## Publishing
 
-The source repository is intended to be `RovianDev/BrowserOverlayFix`. The separate Xposed listing should be `Xposed-Modules-Repo/io.github.roviandev.browseroverlayfix`; Pixel Suite remains a separate project.
+Source: [RovianDev/BrowserOverlayFix](https://github.com/RovianDev/BrowserOverlayFix). Xposed listing: [io.github.roviandev.browseroverlayfix](https://github.com/Xposed-Modules-Repo/io.github.roviandev.browseroverlayfix).
 
 See [publishing instructions](docs/publishing.md). Only signed APKs, documentation and public source assets belong in a release. Never upload your development folder wholesale or include signing keys, device logs or unrelated projects.
 
