@@ -2,7 +2,7 @@
 
 Record browser/version, Android/version, LSPosed/version, overlay/version, module version and package.
 
-1. Disable both Browser Overlay Fix and its Opera-only predecessor. Restart the browser and reproduce the overlay warning.
+1. Disable Browser Overlay Fix. Restart the browser and reproduce the overlay warning.
 2. Enable Browser Overlay Fix for that browser only. Restart and confirm the log says the module loaded and hooks installed.
 3. Test Deny and Allow separately, resetting the site's permission between tests. Confirm the actual denied/granted outcome, not just that the warning disappears.
 4. Test Android runtime permissions separately. Confirm denial remains denial; the module must not auto-grant anything.
