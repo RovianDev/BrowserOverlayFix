@@ -1,0 +1,14 @@
+/out/
+/.build/
+/.build.*/
+*.jks
+*.keystore
+*.p12
+*.pem
+*.key
+*.apk
+*.idsig
+*.before-lambda-fix
+local.properties
+.env
+sign-tmp.sh
