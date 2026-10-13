@@ -88,6 +88,15 @@ The source repository is intended to be `RovianDev/BrowserOverlayFix`. The separ
 
 See [publishing instructions](docs/publishing.md). Only signed APKs, documentation and public source assets belong in a release. Never upload your development folder wholesale or include signing keys, device logs or unrelated projects.
 
+## Support the developer
+
+If Browser Overlay Fix helps you, you can support RovianDev:
+
+- [Buy Me a Coffee](https://buymeacoffee.com/roviandev)
+- [Patreon](https://www.patreon.com/c/RovianDev)
+
+Donations are optional; the module remains free and open source.
+
 ## License and credits
 
 Copyright © 2026 RovianDev. GPL-3.0-only; see [LICENSE](LICENSE). Compile-only API stubs were carried forward from the author's existing API 102 module projects. The libxposed API is supplied at runtime by the framework. The globe, overlay and pointer icon is original project artwork, supplied as an editable SVG and Android vector.
