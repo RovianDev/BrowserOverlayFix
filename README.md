@@ -53,27 +53,9 @@ The launcher screen explains setup and limitations; scope and enablement are man
 
 This is a new application ID: `io.github.roviandev.browseroverlayfix`. Disable or uninstall the older **Opera Overlay Fix** module before enabling this one, so two modules do not hook the same methods. Your old module used a test signing key; this project is intended for your release key.
 
-## Build and sign on Windows
+## Source code
 
-The build uses the existing WSL toolchain: Java compiler with `--release 8`, an Android compile jar, `aapt`, `dalvik-exchange`, `zip` and `zipalign`. Signing additionally requires `apksigner`. No Gradle is needed. Override `ANDROID_JAR` in WSL if the compile jar is elsewhere; the existing environment uses `/usr/lib/android-sdk/platforms/android-23/android.jar`.
-
-From this project folder:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\build-release.ps1
-```
-
-The default keystore path matches the project's sibling signing backup directory. For other developers, supply a keystore:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\build-release.ps1 -Keystore "C:\path\to\release.jks" -Alias "your-alias"
-```
-
-`apksigner` prompts for the password interactively. The script does not save the password or include it in command arguments. A separate key password may also be requested. Keep signing keys outside this repository and never upload them. No private key is distributed with the source.
-
-Output: `out/BrowserOverlayFix-v1.0.0.apk`. The script verifies structure, signature and alignment and prints its SHA-256 hash. `bash build.sh` produces only `out/aligned.apk`, which is unsigned and not a public release.
-
-Compile-only API 102 stubs are included for reproducibility and are excluded from the APK. Callback classes are written explicitly to avoid the dynamic-call metadata that caused the first prototype to fail Android verification. The build uses a fresh directory each time to prevent stale classes from entering the APK.
+The complete source is available in this repository. Developer build instructions are in [BUILD.md](BUILD.md).
 
 ## Testing and troubleshooting
 
