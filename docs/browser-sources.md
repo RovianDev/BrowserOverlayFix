@@ -1,6 +1,6 @@
 # Browser package sources
 
-Checked October 13, 2026. These establish package identity, not module compatibility.
+Official package links for the documented browser list.
 
 - [Opera](https://play.google.com/store/apps/details?id=com.opera.browser)
 - [Chrome](https://play.google.com/store/apps/details?id=com.android.chrome)
