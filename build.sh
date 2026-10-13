@@ -11,8 +11,10 @@ WORK=$(mktemp -d "$PWD/.build.XXXXXXXX")
 trap 'rm -rf -- "$WORK"' EXIT
 mkdir -p "$WORK/stubs" "$WORK/classes" "$WORK/generated" "$WORK/META-INF/xposed" out
 aapt package -f -M AndroidManifest.xml -S res -I "$AJ" -0 arsc -J "$WORK/generated" -F "$WORK/unsigned.apk"
-javac --release 8 -cp "$AJ" -d "$WORK/stubs" $(find stubs -name '*.java')
-javac --release 8 -cp "$AJ:$WORK/stubs" -d "$WORK/classes" $(find src "$WORK/generated" -name '*.java')
+mapfile -d '' -t STUB_SOURCES < <(find stubs -name '*.java' -print0)
+mapfile -d '' -t MODULE_SOURCES < <(find src "$WORK/generated" -name '*.java' -print0)
+javac --release 8 -cp "$AJ" -d "$WORK/stubs" "${STUB_SOURCES[@]}"
+javac --release 8 -cp "$AJ:$WORK/stubs" -d "$WORK/classes" "${MODULE_SOURCES[@]}"
 dalvik-exchange --dex --min-sdk-version=26 --output="$WORK/classes.dex" "$WORK/classes"
 cp meta/xposed/* "$WORK/META-INF/xposed/"
 (cd "$WORK"; zip -q -0 unsigned.apk classes.dex; zip -q -X unsigned.apk META-INF/xposed/*)
