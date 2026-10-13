@@ -10,4 +10,4 @@ Record browser/version, Android/version, LSPosed/version, overlay/version, modul
 6. Confirm an unselected browser and unrelated apps keep their original behavior.
 7. Confirm the informational launcher screen opens and the icon displays in Settings and LSPosed.
 
-The author confirmed the predecessor's Opera/Panels fix. Other browsers and this expanded APK still require device tests. Do not label an untested browser “confirmed compatible.”
+On October 13, 2026, the author confirmed Browser Overlay Fix v1.0.0 with Panels on their phone in Opera, Chrome, Brave, Microsoft Edge, Firefox, Vivaldi and DuckDuckGo. Samsung Browser is expected to work but has not been tested. These results do not establish compatibility with every device or browser version.
