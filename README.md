@@ -10,7 +10,7 @@ Makes browser permission dialogs respond when a floating overlay such as Panels 
 
 Inside browsers you select in LSPosed, the module changes Java touch-event reporting so a touch is reported as unobscured. It clears only the obscured and partially obscured flags in `MotionEvent.getFlags()` and returns false from `isObscured()` and, where available, `isPartiallyObscured()`.
 
-RovianDev confirmed Browser Overlay Fix v1.0.0 working with Panels on their phone on October 13, 2026, in Opera, Chrome, Brave, Microsoft Edge, Firefox, Vivaldi and DuckDuckGo. The module includes a browser allowlist, icon and informational app screen.
+Browser Overlay Fix v1.0.0 is tested and working with Panels in Opera, Chrome, Brave, Microsoft Edge, Firefox, Vivaldi and DuckDuckGo. The module includes a browser allowlist, icon and informational app screen.
 
 It does not grant permissions, click buttons, change website permissions, hide installed apps, or modify Panels. It does not hook system_server or Android's permission controller. It has no network permission, analytics, or background service.
 
@@ -24,16 +24,16 @@ Enable the module only for browsers where you need it, and use trusted overlays.
 
 | Browser | Package | Status |
 | --- | --- | --- |
-| Opera | `com.opera.browser` | Confirmed working on the author's phone (v1.0.0) |
-| Chrome | `com.android.chrome` | Confirmed working on the author's phone (v1.0.0) |
-| Brave | `com.brave.browser` | Confirmed working on the author's phone (v1.0.0) |
-| Microsoft Edge | `com.microsoft.emmx` | Confirmed working on the author's phone (v1.0.0) |
+| Opera | `com.opera.browser` | Tested and working (v1.0.0) |
+| Chrome | `com.android.chrome` | Tested and working (v1.0.0) |
+| Brave | `com.brave.browser` | Tested and working (v1.0.0) |
+| Microsoft Edge | `com.microsoft.emmx` | Tested and working (v1.0.0) |
 | Samsung Browser | `com.sec.android.app.sbrowser` | Expected to work; not yet tested |
-| Firefox | `org.mozilla.firefox` | Confirmed working on the author's phone (v1.0.0) |
-| Vivaldi | `com.vivaldi.browser` | Confirmed working on the author's phone (v1.0.0) |
-| DuckDuckGo | `com.duckduckgo.mobile.android` | Confirmed working on the author's phone (v1.0.0) |
+| Firefox | `org.mozilla.firefox` | Tested and working (v1.0.0) |
+| Vivaldi | `com.vivaldi.browser` | Tested and working (v1.0.0) |
+| DuckDuckGo | `com.duckduckgo.mobile.android` | Tested and working (v1.0.0) |
 
-The seven confirmed browsers were tested by the author on their own phone. Samsung Browser is expected to work because it uses the same Android touch-event APIs, but it has not been tested. Results can vary with the device, browser version, overlay or Android input blocking. Android runtime permission dialogs may still refuse obscured touches. Select only the browsers you need in LSPosed.
+The seven browsers marked above are tested and working with Panels. Samsung Browser is expected to work because it uses the same Android touch-event APIs, but it has not been tested. Results can vary with the device, browser version, overlay or Android input blocking. Android runtime permission dialogs may still refuse obscured touches. Select only the browsers you need in LSPosed.
 
 Package identities were checked against the [official Play listings](docs/browser-sources.md). Browser names belong to their respective owners; this project is not affiliated with them.
 
@@ -63,7 +63,7 @@ From this project folder:
 powershell -ExecutionPolicy Bypass -File .\build-release.ps1
 ```
 
-The default keystore path matches the author's existing sibling signing backup directory. For other developers, supply a keystore:
+The default keystore path matches the project's sibling signing backup directory. For other developers, supply a keystore:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\build-release.ps1 -Keystore "C:\path\to\release.jks" -Alias "your-alias"
@@ -98,4 +98,4 @@ Donations are optional; the module remains free and open source.
 
 ## License and credits
 
-Copyright © 2026 RovianDev. GPL-3.0-only; see [LICENSE](LICENSE). Compile-only API stubs were carried forward from the author's existing API 102 module projects. The libxposed API is supplied at runtime by the framework. The globe, overlay and pointer icon is original project artwork, supplied as an editable SVG and Android vector.
+Copyright © 2026 RovianDev. GPL-3.0-only; see [LICENSE](LICENSE). Compile-only API stubs were carried forward from existing API 102 module projects. The libxposed API is supplied at runtime by the framework. The globe, overlay and pointer icon is original project artwork, supplied as an editable SVG and Android vector.
