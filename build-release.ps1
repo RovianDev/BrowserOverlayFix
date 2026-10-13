@@ -1,6 +1,7 @@
 # Copyright (C) 2026 RovianDev. SPDX-License-Identifier: GPL-3.0-only
 param(
-    [string]$Keystore = '..\keystore and signing files (backup)\rovian-pixelsuite.jks',
+    [Parameter(Mandatory=$true)]
+    [string]$Keystore,
     [string]$Alias = ''
 )
 $ErrorActionPreference = 'Stop'
